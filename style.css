@@ -137,7 +137,7 @@ main {
     background-color: #ffffff;
     border-radius: 15px;
     text-align: center;
-    max-width: max-content;
+    max-width: 50%;
     padding: 3rem;
     margin-top: 15px;
 }
@@ -170,11 +170,6 @@ footer > p {
     margin-bottom: 10px;
 }
 
-footer > p {
-    justify-self: flex-end;
-}
-
-
 .footer-info {
     display: flex;
     align-items: center;
@@ -198,11 +193,6 @@ footer > p {
     margin: 10px;
 }
 
-.social-links {
-    justify-self: flex-start;
-}
-
-
 
 
 
@@ -217,9 +207,13 @@ footer > p {
     }
 
     .intro {
-        max-width: 70%;
+        max-width: 80%;
         text-align: center;
         justify-self: center;
+    }
+
+    main {
+        margin: 3rem 1rem 15rem 1rem;
     }
 
     .card {
@@ -237,13 +231,21 @@ footer > p {
     footer > p {
         float: none;
     }
-/*
+
+    footer{
+        max-width: 100%;
+    }
+
     .footer {
         grid-template-columns: 1fr;
         max-width: 50%;
-    } */
+    }
 
     .ready {
-        display: none;
+        left: 25%;
+        right: 25%;
+    }
+    .ready button {
+        max-width: 100%;
     }
 }
