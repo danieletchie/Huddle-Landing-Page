@@ -110,7 +110,7 @@ main {
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
-    padding: 3rem 3rem 2rem 8rem;
+    padding: 3rem 3rem 2rem 5rem;
     margin: 3rem auto;
 
 }
@@ -121,8 +121,8 @@ main {
 
 .card img {
     justify-self: flex-end;
-    width: 400px;
-    height: 100%;
+    max-width: 400px;
+    max-height: 100%;
 }
 
 .card .inverse {
@@ -193,13 +193,26 @@ footer > p {
 .ref-links > p {
     margin: 10px;
 }
+@media screen and (max-width: 900px) {
+    .card img {
+        max-width: 250px;
+    }
+    .card .desc {
+        max-width: 100%;
+        margin: 1rem;
+    }
+}
 
 
 
 
 
+@media screen and (max-width: 600px) {
 
-@media screen and (max-width: 800px) {
+    button {
+        padding: 1rem 2rem;       
+        max-width: 100%;
+        }
     .grid {
        grid-template-areas: 
        "logo btn"
@@ -216,18 +229,22 @@ footer > p {
     }
 
     main {
-        margin: 3rem 1rem 18rem 1rem;
+        margin: 3rem 1rem 8rem 1rem;
     }
 
     .card {
         grid-template-columns: 1fr;
+        padding: 10%;
     }
+
 
     .card img {
         max-width: 100%;
+        justify-self: center;
         order: 1;
     }
     .card .desc {
+        justify-self: center;
         margin-top: 2rem;
         order: 2;
     }
@@ -250,17 +267,13 @@ footer > p {
     }
 
     .ready {
-        margin-top: 15px;
-        max-height: 100%;
-        max-width: 90% !important;
-    }
-    .ready button {
+        left: 5%;
+        right: 5%;
+        padding: 1rem 1rem;
         max-width: 100%;
-        font-size: 12px;
+        margin-top: -15px;
     }
-
     .ready h3 {
         font-size: 20px;
     }
-
 }
