@@ -261,6 +261,7 @@ footer > p {
 
     .footer {
         grid-template-columns: 1fr;
+        margin-top: 2rem;
         max-width: 100%;
     }
 
