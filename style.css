@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    width: fit-content;
+}
+
+header {
+    background-image: url("images/bg-hero-desktop.svg");
+    background-color: rgba(223, 240, 248, 0.6);
+}
+
+
+button {
+    padding: 1rem 3rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    margin: 1rem 0;
+    
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 1rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.grid {
+    padding: 2rem 6rem;
+    display: grid;
+    align-items: center;
+    grid-template-areas: 
+    "logo btn"
+    "intro image";
+    row-gap: 2rem;
+}
+
+.logo {
+    grid-area: logo;
+    width: 10rem;
+}
+
+.header-btn {
+    grid-area: btn;
+    background-color: #ffffff;
+    font-weight: 700;
+}
+
+.intro {
+    grid-area: intro;
+}
+
+.grid a {
+    align-self: flex-end;
+    justify-self: end;
+}
+
+.grid .illustration {
+    grid-area: image;
+    align-self: center;
+    justify-self:flex-end;
+    width: 600px;
+    height: 400px;
+}
+
+.intro p {
+    margin: 25px 0;
+}
+
+.intro button {
+    background-color: hsl(322, 100%, 66%);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+
+
+main {
+    margin: 5rem 5rem 15rem 5rem;
+}
+
+.card {
+    box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
+    border-radius: 15px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 3rem 2rem 8rem;
+    margin: 3rem;
+
+}
+
+.desc p {
+    color: hsl(208, 11%, 55%);
+}
+
+.card img {
+    justify-self: flex-end;
+    width: 400px;
+    height: 100%;
+}
+
+.card .inverse {
+    justify-self: flex-start;
+}
+
+.ready {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    max-width: max-content;
+    padding: 3rem;
+    margin-top: 15px;
+}
+
+.ready button {
+    background-color: hsl(322, 100%, 66%);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+footer {
+    background-color: #01252f;
+    padding: 7rem;
+    color: #ffffff;
+}
+
+footer > p {
+    float: right;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.footer > div > .logo {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(106%) contrast(107%);
+    width: 10rem;
+    margin-bottom: 10px;
+}
+
+footer > p {
+    justify-self: flex-end;
+}
+
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+
+.footer-info > .icon {
+    width: 5%;
+    height: 5%;
+}
+
+
+.footer-info p {
+    padding-left: 15px;
+    display: inline;
+
+}
+
+.ref-links > p {
+    margin: 10px;
+}
+
+.social-links {
+    justify-self: flex-start;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    .grid {
+       grid-template-areas: 
+       "logo btn"
+       "intro intro"
+       "image image";
+    }
+
+    .intro {
+        max-width: 70%;
+        text-align: center;
+        justify-self: center;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        order: 1;
+    }
+    .card .desc {
+        margin-top: 2rem;
+        order: 2;
+    }
+
+    footer > p {
+        float: none;
+    }
+/*
+    .footer {
+        grid-template-columns: 1fr;
+        max-width: 50%;
+    } */
+
+    .ready {
+        display: none;
+    }
+}
