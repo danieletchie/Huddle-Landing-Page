@@ -11,12 +11,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    width: fit-content;
 }
 
 header {
     background-image: url("images/bg-hero-desktop.svg");
     background-color: rgba(223, 240, 248, 0.6);
+    max-width: 100%;
 }
 
 
@@ -82,7 +82,7 @@ a {
     grid-area: image;
     align-self: center;
     justify-self:flex-end;
-    width: 600px;
+    width: 100%;
     height: 400px;
 }
 
@@ -97,11 +97,11 @@ a {
 }
 
 
-
-
 main {
     margin: 5rem 5rem 15rem 5rem;
+    max-width: 100%;
 }
+
 
 .card {
     box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
@@ -111,7 +111,7 @@ main {
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     padding: 3rem 3rem 2rem 8rem;
-    margin: 3rem;
+    margin: 3rem auto;
 
 }
 
@@ -204,6 +204,8 @@ footer > p {
        "logo btn"
        "intro intro"
        "image image";
+       max-width: 100%;
+       padding: 2rem 2rem;
     }
 
     .intro {
@@ -242,6 +244,8 @@ footer > p {
     }
 
     .ready {
+        position: relative;
+        margin-top:-15px;
         left: 25%;
         right: 25%;
     }
