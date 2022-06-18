@@ -289,5 +289,9 @@ footer > p {
     }
     .ready h3 {
         font-size: 18px;
-    }    
+    } 
+    .footer{
+        font-size: 15px;
+    }
+
 }
