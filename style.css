@@ -156,6 +156,7 @@ footer {
 
 footer > p {
     float: right;
+    font-size: 15px;
 }
 
 .footer {
@@ -256,6 +257,7 @@ footer > p {
 
     footer > p {
         float: none;
+        font-size: 12px;
     }
 
 
