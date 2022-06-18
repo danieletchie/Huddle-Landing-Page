@@ -224,6 +224,7 @@ footer > p {
     }
 
     .card img {
+        max-width: 100%;
         order: 1;
     }
     .card .desc {
