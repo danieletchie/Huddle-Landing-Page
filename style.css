@@ -162,6 +162,7 @@ footer > p {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     align-items: center;
+    margin: 5px;
 }
 
 .footer > div > .logo {
@@ -198,7 +199,7 @@ footer > p {
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .grid {
        grid-template-areas: 
        "logo btn"
@@ -215,7 +216,7 @@ footer > p {
     }
 
     main {
-        margin: 3rem 1rem 15rem 1rem;
+        margin: 3rem 1rem 18rem 1rem;
     }
 
     .card {
@@ -243,13 +244,22 @@ footer > p {
         max-width: 50%;
     }
 
+    .social-links {
+        margin: 15px 0px;
+    }
+
     .ready {
-        position: relative;
-        margin-top:-15px;
-        left: 25%;
-        right: 25%;
+        margin-top: 15px;
+        max-height: 100%;
+        max-width: 90% !important;
     }
     .ready button {
         max-width: 100%;
+        font-size: 12px;
     }
+
+    .ready h3 {
+        font-size: 20px;
+    }
+
 }
