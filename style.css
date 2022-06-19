@@ -1,302 +1,404 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --animate-durations: 1500ms;
+  --animate-mini: 500ms;
+  --logo-delay: var(--animate-mini);
+  --intro-head-delay: calc(var(--logo-delay) + var(--animate-durations));
+  --intro-text-delay: calc(var(--intro-head-delay) + var(--animate-durations));
+  --primary-btn-delay: calc(var(--intro-text-delay) + var(--animate-mini));
+  --illustration-dealy: calc( var(--primary-btn-delay) + var(--animate-durations) )
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 header {
-    background-image: url("images/bg-hero-desktop.svg");
-    background-color: rgba(223, 240, 248, 0.6);
-    max-width: 100%;
+  background-image: url("images/bg-hero-desktop.svg");
+  background-color: rgba(223, 240, 248, 0.6);
+  max-width: 100%;
+  animation-name: header-animate;
+  animation-duration: var(--animate-durations);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
-
 
 button {
-    padding: 1rem 3rem;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
+  padding: 1rem 3rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
 }
 
-
 h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 1fr;
-    
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 1fr;
+  animation-name: main-heading;
+  animation-fill-mode: forwards;
+  animation-duration: var(--animate-durations);
+  animation-delay: var(--intro-head-delay);
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    margin: 1rem 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 1rem 0;
 }
 
 a {
-    text-decoration: none;
-    color: #ffffff;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .grid {
-    padding: 2rem 6rem;
-    display: grid;
-    align-items: center;
-    grid-template-areas: 
+  padding: 2rem 6rem;
+  display: grid;
+  align-items: center;
+  grid-template-areas:
     "logo btn"
     "intro image";
-    row-gap: 2rem;
+  row-gap: 2rem;
 }
 
 .logo {
-    grid-area: logo;
-    width: 10rem;
+  grid-area: logo;
+  width: 10rem;
+  animation: logo-animate 1500ms ease-in var(--logo-delay) forwards;
+  transform: translateX(-500%);
 }
 
 .header-btn {
-    grid-area: btn;
-    background-color: #ffffff;
-    font-weight: 700;
+  grid-area: btn;
+  background-color: #ffffff;
+  font-weight: 700;
+  animation: primary-btn var(--animate-durations) ease-in
+    var(--primary-btn-delay) forwards;
+  transform: translateX(500%);
 }
 
 .intro {
-    grid-area: intro;
-    max-width: 75%;
+  grid-area: intro;
+  max-width: 75%;
 }
 
 .grid a {
-    align-self: flex-end;
-    justify-self: end;
+  align-self: flex-end;
+  justify-self: end;
 }
 
 .grid .illustration {
-    grid-area: image;
-    align-self: center;
-    justify-self:flex-end;
-    width: 100%;
-    height: 400px;
+  grid-area: image;
+  align-self: center;
+  justify-self: flex-end;
+  width: 100%;
+  height: 400px;
+  animation: illust-animate var(--animate-mini) ease-in var(--illustration-dealy) forwards;
+  transform:  scale3d(3, 3, 1);
+  opacity: 0;
 }
 
 .intro p {
-    margin: 25px 0;
+  margin: 25px 0;
+  animation: main-heading var(--animate-durations) ease-in var(--intro-head-delay) forwards;
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .intro button {
-    background-color: hsl(322, 100%, 66%);
-    font-weight: 700;
-    color: #ffffff;
+  background-color: hsl(322, 100%, 66%);
+  font-weight: 700;
+  color: #ffffff;
+  animation-name: intro-btn-animate ;
+  animation-duration:  var(--animate-durations);
+  animation-timing-function:  ease-in;
+  animation-delay:  var(--intro-text-delay);
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(50%);
 }
-
 
 main {
-    margin: 5rem 5rem 15rem 5rem;
-    max-width: 100%;
+  margin: 5rem 5rem 15rem 5rem;
+  max-width: 100%;
 }
 
-
 .card {
-    box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
-    border-radius: 15px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    padding: 3rem 3rem 2rem 5rem;
-    margin: 3rem auto;
-
+  box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
+  border-radius: 15px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem 3rem 2rem 5rem;
+  margin: 3rem auto;
 }
 
 .desc p {
-    color: hsl(208, 11%, 55%);
+  color: hsl(208, 11%, 55%);
 }
 
 .card img {
-    justify-self: flex-end;
-    max-width: 400px;
-    max-height: 100%;
+  justify-self: flex-end;
+  max-width: 400px;
+  max-height: 100%;
 }
 
 .card .inverse {
-    justify-self: flex-start;
+  justify-self: flex-start;
 }
 
 .ready {
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
-    background-color: #ffffff;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 50%;
-    padding: 3rem;
-    margin-top: 15px;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  box-shadow: 1px 1px 2px 2px hsl(208, 11%, 90%);
+  background-color: #ffffff;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 50%;
+  padding: 3rem;
+  margin-top: 15px;
 }
 
 .ready button {
-    background-color: hsl(322, 100%, 66%);
-    font-weight: 700;
-    color: #ffffff;
+  background-color: hsl(322, 100%, 66%);
+  font-weight: 700;
+  color: #ffffff;
 }
 
 footer {
-    background-color: #01252f;
-    padding: 7rem;
-    color: #ffffff;
+  background-color: #01252f;
+  padding: 7rem;
+  color: #ffffff;
 }
 
 footer > p {
-    float: right;
-    font-size: 15px;
+  float: right;
+  font-size: 15px;
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    align-items: center;
-    margin: 5px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  margin: 5px;
 }
 
 .footer > div > .logo {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg) brightness(106%) contrast(107%);
-    width: 10rem;
-    margin-bottom: 10px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(115deg)
+    brightness(106%) contrast(107%);
+  width: 10rem;
+  margin-bottom: 10px;
 }
 
 .footer-info {
-    display: flex;
-    align-items: center;
-    margin: 5px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }
-
 
 .footer-info > .icon {
-    width: 1rem;
-    height: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
-
 .footer-info p {
-    padding-left: 15px;
-    display: inline;
-
+  padding-left: 15px;
+  display: inline;
 }
 
 .ref-links > p {
-    margin: 10px;
+  margin: 10px;
 }
+
+
 @media screen and (max-width: 900px) {
-    .card img {
-        max-width: 250px;
-    }
-    .card .desc {
-        max-width: 100%;
-        margin: 1rem;
-    }
+  .card img {
+    max-width: 250px;
+  }
+  .card .desc {
+    max-width: 100%;
+    margin: 1rem;
+  }
 }
-
-
-
-
 
 @media screen and (max-width: 600px) {
+  button {
+    padding: 1rem 2rem;
+    max-width: 100%;
+  }
+  .grid {
+    grid-template-areas:
+      "logo btn"
+      "intro intro"
+      "image image";
+    max-width: 100%;
+    padding: 2rem 2rem;
+  }
 
-    button {
-        padding: 1rem 2rem;       
-        max-width: 100%;
-        }
-    .grid {
-       grid-template-areas: 
-       "logo btn"
-       "intro intro"
-       "image image";
-       max-width: 100%;
-       padding: 2rem 2rem;
-    }
+  .intro {
+    max-width: 80%;
+    text-align: center;
+    justify-self: center;
+  }
 
-    .intro {
-        max-width: 80%;
-        text-align: center;
-        justify-self: center;
-    }
+  .header-btn {
+    animation-delay: var(--intro-head-delay);
+  }
 
-    main {
-        margin: 3rem 1rem 8rem 1rem;
-    }
+  h2 {
+    animation-delay: var(--intro-text-delay);
+  }
 
-    .card {
-        grid-template-columns: 1fr;
-        padding: 10%;
-    }
+  .intro p {
+    animation-delay: var(--primary-btn-delay);
+  }
 
+  main {
+    margin: 3rem 1rem 8rem 1rem;
+  }
 
-    .card img {
-        max-width: 100%;
-        justify-self: center;
-        order: 1;
-    }
-    .card .desc {
-        justify-self: center;
-        margin-top: 2rem;
-        order: 2;
-    }
+  .card {
+    grid-template-columns: 1fr;
+    padding: 10%;
+  }
 
-    footer {
-        max-width: 100vw;
-        padding: 2rem;
-    }
+  .card img {
+    max-width: 100%;
+    justify-self: center;
+    order: 1;
+  }
+  .card .desc {
+    justify-self: center;
+    margin-top: 2rem;
+    order: 2;
+  }
 
-    footer > p {
-        float: none;
-        font-size: 12px;
-    }
+  footer {
+    max-width: 100vw;
+    padding: 2rem;
+  }
 
+  footer > p {
+    float: none;
+    font-size: 12px;
+  }
 
-    .footer {
-        grid-template-columns: 1fr;
-        margin-top: 2rem;
-        max-width: 100%;
-    }
+  .footer {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
 
-    .footer-info {
-        margin: 1px 0;
-    }
+  .footer-info {
+    margin: 1px 0;
+  }
 
-    .social-links {
-        margin: 15px 0px;
-    }
+  .social-links {
+    margin: 15px 0px;
+  }
 
-    .ready {
-        left: 5%;
-        right: 5%;
-        padding: 1rem 1rem;
-        max-width: 100%;
-        margin-top: -15px;
-    }
-    .ready h3 {
-        font-size: 20px;
-    }
+  .ready {
+    left: 5%;
+    right: 5%;
+    padding: 1rem 1rem;
+    max-width: 100%;
+    margin-top: -15px;
+  }
+  .ready h3 {
+    font-size: 20px;
+  }
 }
 
-@media screen and (max-width:380px) {
-    .grid  button {
-        font-size: 10px;
-    }
-    .ready h3 {
-        font-size: 16px;
-    } 
-    .footer{
-        font-size: 15px;
-    }
+@media screen and (max-width: 380px) {
+  .grid button {
+    font-size: 10px;
+  }
+  .ready h3 {
+    font-size: 16px;
+  }
+  .footer {
+    font-size: 15px;
+  }
+}
 
+@keyframes header-animate {
+  0% {
+    transform: translateY(-1000%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes logo-animate {
+  0% {
+    transform: translateX(-500%);
+  }
+  90% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes primary-btn {
+  0% {
+    transform: translateX(500%);
+  }
+  90% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes main-heading {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes intro-btn-animate {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+@keyframes illust-animate {
+  0% {
+    transform: scale3d(2, 2, 9);
+    opacity: 0;
+  }  
+
+  100% {
+    transform:  scale3d(1,1,1);
+    opacity: 1;
+  }
 }
